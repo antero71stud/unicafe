@@ -73,8 +73,8 @@ class App extends React.Component {
                         <Tilastorivi teksti={'Hyvä'} arvo={props.counterHyva} />
                         <Tilastorivi teksti={'Neutraali'} arvo={props.counterNeutraali} />
                         <Tilastorivi teksti={'Huono'} arvo={props.counterHuono} />
-                        <Tilastorivi teksti={'Keskiarvo'} arvo={props.keskiarvo} />
-                        <Tilastorivi teksti={'Positiivisia'} arvo={props.positiivisia + '%'} />
+                        <Tilastorivi teksti={'Keskiarvo'} arvo={Number.parseFloat(props.keskiarvo).toFixed(2)} />
+                        <Tilastorivi teksti={'Positiivisia'} arvo={Number.parseFloat(props.positiivisia).toFixed(2) + '%'} />
                     </tbody>
                 </table>
             </div>
@@ -93,7 +93,7 @@ const Tilastorivi = (props) => {
     return (
         <tr>
             <td>{props.teksti}</td>
-            <td>{Number.parseFloat(props.arvo).toFixed(2)}</td>
+            <td>{props.arvo}</td>
         </tr>
     )
 }
